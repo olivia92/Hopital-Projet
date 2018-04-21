@@ -31,17 +31,21 @@ public class FenRecherche extends JFrame implements ActionListener, ItemListener
     
     private JTextField requete;
     private final JPanel p;
+    private Connexion maconnexion;
     
     
-    public FenRecherche(){
+    public FenRecherche(Connexion connexion){
         super("Fenêtre de Recherche");
+        
+        this.maconnexion=connexion;
+        
         setLayout(new BorderLayout());
         setBounds(0, 0, 400, 400);
         setResizable(true);
         setVisible(true);
         p = new JPanel();
         
-        requete = new JTextField();
+        //requete = new JTextField();
         p.setLayout(new GridLayout(1, 3));
         
         p.add(requete);
