@@ -5,7 +5,7 @@
  */
 package hopital;
 
-import javax.swing.JFrame;
+
 import javax.swing.SwingUtilities;
 
 /**
@@ -18,21 +18,15 @@ public class Hopital {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // creation de la fenetre
+         // creation de la fenetre
         //Fenetre f = new Fenetre();
-        
-        //SwingUtilities.invokeLater(new Runnable()
-        //{
-          //  public void run()
-            //{
-                FenLogin login = new FenLogin();
-                login.createComponents();
-                //Connexion maconnexion = login.getConnexion();
-                //login.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                //FenMenuu menu = new FenMenuu(maconnexion);
-                
-            //}
-        //});
+         SwingUtilities.invokeLater(new Runnable()
+        {
+            public void run()
+            {
+                new FenLogin().createComponents();
+            }
+        });
         
     }
     

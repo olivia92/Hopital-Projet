@@ -4,12 +4,6 @@
  * and open the template in the editor.
  */
 package hopital;
-
-/**
- *
- * @author Olivia
- */
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -18,15 +12,18 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class FenRecherche extends JFrame implements ActionListener, ItemListener{
-    
+/**
+ *
+ * @author cfran
+ */
+public class FenMaj extends JFrame implements ActionListener, ItemListener {
     private JTextField requete;
     private final JPanel p;
     private Connexion maconnexion;
     
     
-    public FenRecherche(Connexion connexion){
-        super("Fenêtre de Recherche");
+    public FenMaj(Connexion connexion){
+        super("Fenêtre de Mise a jour");
         
         this.maconnexion=connexion;
         
@@ -41,6 +38,7 @@ public class FenRecherche extends JFrame implements ActionListener, ItemListener
         
         p.add(requete);
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {

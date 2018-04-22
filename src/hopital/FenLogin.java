@@ -12,26 +12,16 @@ package hopital;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ButtonGroup;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
-import java.awt.event.*;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.border.LineBorder;
 
 public class FenLogin extends JFrame implements ActionListener {
     
-    private JFrame myFrame;
-    
+     private JFrame myFrame;
+    // Added by me
     private JPanel contentPane;
     private JPanel myPanel;
     private JLabel username=null;
@@ -47,11 +37,6 @@ public class FenLogin extends JFrame implements ActionListener {
     private Font myFont12bold=new Font("Tahoma", Font.BOLD, 12);
     private Font myFont11bold=new Font("Tahoma", Font.BOLD, 11);
     private JButton connect, local;
-    private Connexion maconnexion;
-    
-    /** méthode qui ajoute tous les composants
-     * 
-     */
     
     public void createComponents(){
         contentPane = new JPanel();
@@ -131,6 +116,7 @@ public class FenLogin extends JFrame implements ActionListener {
     
         
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent evt) {
@@ -145,9 +131,8 @@ public class FenLogin extends JFrame implements ActionListener {
             try {
                 try {
                     // tentative de connexion si les 4 attributs sont remplis
-                    maconnexion = new Connexion(username.getText(), passwdECEString,
+                    Connexion maconnexion = new Connexion(username.getText(), passwdECEString,
                             "root", passwdBDDString);
-                    this.changewindow();
 
                 
                 } catch (ClassNotFoundException cnfe) {
@@ -166,9 +151,9 @@ public class FenLogin extends JFrame implements ActionListener {
                 try {
 
                     // tentative de connexion si les 4 attributs sont remplis
-                    maconnexion = new Connexion(nameBDDText.getText(), usernamestring, passwordstring);
+                    Connexion maconnexion = new Connexion(nameBDDText.getText(), usernamestring, passwordstring);
                     System.out.println("Connexion réussie");
-                    this.changewindow();
+                    FenMenu f1 = new FenMenu();
                 
                 } catch (ClassNotFoundException cnfe) {
                     System.out.println("Connexion echouee : probleme de classe");
@@ -183,14 +168,6 @@ public class FenLogin extends JFrame implements ActionListener {
            
 
           
-    }
-    //public Connexion getConnexion(){ //retourne la connexion
-     //   return this.maconnexion;
-    //}
-    
-    public void changewindow(){
-        myFrame.setVisible(false); //rend la fenêtre plus visible
-        FenMenuu menu= new FenMenuu(this.maconnexion);
     }
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

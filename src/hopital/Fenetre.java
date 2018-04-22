@@ -445,7 +445,7 @@ public class Fenetre extends JFrame implements ActionListener, ItemListener {
 
         }
         else if (source == test1){
-          //  FenRecherche recherche = new FenRecherche();
+           // FenRecherche f1 = new FenRecherche();
         }
     }
 
